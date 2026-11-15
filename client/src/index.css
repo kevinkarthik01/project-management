@@ -1,0 +1,134 @@
+/* ========================================================
+   MODULAR INTERFACE STYLES
+   ======================================================== */
+@import './styles/layout.css';
+@import './styles/header.css';
+@import './styles/footer.css';
+@import './styles/dashboard.css';
+@import './styles/projects.css';
+@import './styles/tasks.css';
+@import './styles/modal.css';
+@import './styles/auth.css';
+@import './styles/projectModules.css';
+
+:root {
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Primary brand colors */
+  --primary: #6C5DD3;
+  --primary-hover: #5B4DC7;
+  --primary-active: #4F3FA8;
+  --primary-light: #F4F0FF;
+  --primary-text: #FFFFFF;
+  
+  /* Background colors */
+  --bg-app: #ECEFF3;
+  --bg-canvas: #F5F7FA;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F8F9FA;
+  --bg-hover: #F1F4F9;
+  
+  /* Dark elements */
+  --dark-active: #0F172A;
+  --dark-text: #0F172A;
+  --dark-pill: #111827;
+  
+  /* Text colors */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --text-light: #64748B;
+  
+  /* Status & Accents */
+  --badge-amber-bg: #FFF7ED;
+  --badge-amber-text: #D97706;
+  --badge-amber-border: #FFEDD5;
+  
+  --badge-blue-bg: #EFF6FF;
+  --badge-blue-text: #2563EB;
+  
+  --badge-purple-bg: #F5F3FF;
+  --badge-purple-text: #7C3AED;
+  
+  --badge-green-bg: #ECFDF5;
+  --badge-green-text: #10B981;
+  
+  --badge-red-bg: #FEF2F2;
+  --badge-red-text: #EF4444;
+  
+  /* Borders & Shadows */
+  --border-color: #ECEEF2;
+  --border-subtle: #F1F3F6;
+  --border-radius-card: 20px;
+  --border-radius-pill: 9999px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+  --shadow-app-shell: 0 25px 50px -12px rgba(15, 23, 42, 0.08);
+  --shadow-purple: 0 4px 14px 0 rgba(108, 93, 211, 0.35);
+  --shadow-active-tab: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: #FFFFFF;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

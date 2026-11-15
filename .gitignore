@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build output
+dist/
+client/dist/
+build/
+
+# Environment variables
+.env
+.env.*
+server/.env
+client/.env
+
+# Vercel
+.vercel
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db
+

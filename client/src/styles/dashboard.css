@@ -1,0 +1,418 @@
+/* ========================================================
+   DASHBOARD INTERFACE STYLES
+   ======================================================== */
+
+.dashboard-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+  margin-bottom: 20px;
+}
+
+.dashboard-main-heading {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0F172A;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.dashboard-sub-heading {
+  font-size: 13.5px;
+  color: #64748B;
+  margin: 3px 0 0;
+}
+
+.dashboard-header-right-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard-date-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* 4 Metric Top Stat Cards */
+.template2-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.template2-stat-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.template2-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+}
+
+.template2-stat-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.template2-stat-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-icon-blue-bg { background-color: #EFF6FF; color: #2563EB; }
+.stat-icon-orange-bg { background-color: #FFF7ED; color: #F97316; }
+.stat-icon-green-bg { background-color: #ECFDF5; color: #10B981; }
+.stat-icon-red-bg { background-color: #FEF2F2; color: #EF4444; }
+
+.template2-stat-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748B;
+}
+
+.template2-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.1;
+  margin-left: 48px;
+  margin-top: -6px;
+}
+
+.template2-stat-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 500;
+  margin-left: 48px;
+}
+
+.trend-green { color: #10B981; }
+.trend-gray { color: #94A3B8; }
+
+/* Middle Row: Donut Chart + Project Progress */
+.template2-middle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.template2-panel-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.template2-panel-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+}
+
+.donut-chart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 4px 0;
+  flex: 1;
+}
+
+.donut-chart-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.donut-legend-col {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  flex: 1;
+  max-width: 220px;
+}
+
+.donut-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.donut-legend-label-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.donut-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.donut-legend-val {
+  font-weight: 700;
+  color: #0F172A;
+  margin-left: auto;
+  margin-right: 14px;
+}
+
+.donut-legend-pct {
+  color: #94A3B8;
+  font-size: 12px;
+  min-width: 32px;
+  text-align: right;
+}
+
+/* Project Progress List */
+.project-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+  flex: 1;
+}
+
+.project-progress-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.project-progress-name {
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.project-progress-pct {
+  font-weight: 600;
+  color: #64748B;
+  font-size: 12px;
+}
+
+.project-progress-bar-track {
+  width: 100%;
+  height: 6px;
+  background-color: #F1F5F9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.project-progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Recent Tasks Section */
+.recent-tasks-panel {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 22px 24px;
+}
+
+.recent-tasks-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.recent-tasks-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563EB;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.recent-tasks-link:hover {
+  text-decoration: underline;
+}
+
+.recent-tasks-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-tasks-table th {
+  text-align: left;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.recent-tasks-table td {
+  padding: 12px;
+  font-size: 13.5px;
+  color: #1E293B;
+  border-bottom: 1px solid #F8FAFC;
+  vertical-align: middle;
+}
+
+.recent-task-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recent-task-check-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1.5px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #FFFFFF;
+}
+
+.recent-task-check-box.checked {
+  background-color: #2563EB;
+  border-color: #2563EB;
+}
+
+.recent-task-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.recent-task-pill.in_progress {
+  background-color: #FFF7ED;
+  color: #EA580C;
+}
+
+.recent-task-pill.todo,
+.recent-task-pill.created {
+  background-color: #EFF6FF;
+  color: #2563EB;
+}
+
+.recent-task-pill.completed {
+  background-color: #ECFDF5;
+  color: #10B981;
+}
+
+.recent-task-date {
+  color: #64748B;
+  font-size: 12.5px;
+}
+
+/* Responsive Dashboard Queries */
+@media (max-width: 1024px) {
+  .template2-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .template2-middle-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dashboard-header-right-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .donut-chart-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .donut-legend-col {
+    width: 100%;
+    max-width: none;
+  }
+
+  .recent-tasks-panel {
+    padding: 16px;
+    overflow-x: auto;
+  }
+
+  .recent-tasks-table {
+    min-width: 520px;
+  }
+}
+
+@media (max-width: 540px) {
+  .template2-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header-right-tools {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .dashboard-date-badge {
+    justify-content: center;
+  }
+}

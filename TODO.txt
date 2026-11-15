@@ -1,0 +1,56 @@
+================================================================================
+PROJECT MANAGEMENT SYSTEM - RBAC & DYNAMIC MENU ROADMAP (TODO)
+================================================================================
+
+1. ROLES & PERMISSIONS MENU UNDER SETTINGS
+--------------------------------------------------------------------------------
+- Location: Accessible under Settings (/settings/roles-permissions or Settings sub-tab).
+- Security Guard: Exclusively visible to and manageable by the 'admin' role alone.
+- Capabilities:
+  * View all system roles and their assigned permissions matrix.
+  * Toggle permissions per role (allow_create, allow_modify, allow_delete).
+  * Add custom sub-roles (e.g., sub_role_creator, manager, viewer).
+
+2. DATABASE-DRIVEN ROLES & PERMISSIONS ENGINE (roles_permissions)
+--------------------------------------------------------------------------------
+- MongoDB Collection: `roles_permissions`
+- Current Initial Roles & Defaults (all set to true by default):
+  * admin:
+    - allow_create: true
+    - allow_modify: true
+    - allow_delete: true
+  * tech:
+    - allow_create: true
+    - allow_modify: true
+    - allow_delete: true
+  * sub_role_creator:
+    - allow_create: true
+    - allow_modify: true
+    - allow_delete: true
+- Future Scope:
+  * Middleware on API routes to enforce fine-grained action checks based on roles_permissions.
+  * Frontend permission hook: usePermission('create') / usePermission('delete') to conditionally render action buttons.
+
+3. DYNAMIC MENU CREATION & MAPPING INTERFACE
+--------------------------------------------------------------------------------
+- Menu Management Interface (Admin Only):
+  * Create, edit, and organize navigation items (Name, Route Path, Lucide Icon, Sort Order, Parent Menu).
+- Role-to-Menu Mapping:
+  * Checkbox matrix allowing Admins to specify which roles can access which navigation menus.
+  * Example:
+    - Home: [admin, tech, sub_role_creator]
+    - Projects: [admin, tech, sub_role_creator]
+    - My Tasks: [admin, tech, sub_role_creator]
+    - Settings: [admin]
+    - Roles & Permissions: [admin]
+- Dynamic Sidebar Integration:
+  * Update Sidebar.jsx to dynamically load navigation menus from the backend API based on the authenticated user's active role.
+  * Dynamic route guarding in App.jsx based on menu permissions.
+
+4. IMPLEMENTATION PHASES
+--------------------------------------------------------------------------------
+[x] Phase 1: Create 'roles_permissions' schema and seed default records (admin, tech, sub_role_creator) with allow_create=true, allow_modify=true, allow_delete=true.
+[ ] Phase 2: Build Roles & Permissions configuration table UI under /settings.
+[ ] Phase 3: Build Menu Creation and Role-to-Menu mapping schema and UI.
+[ ] Phase 4: Wire dynamic menu loader into Sidebar.jsx and protect dynamic routes.
+================================================================================

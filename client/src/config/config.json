@@ -1,0 +1,13 @@
+{
+    "COMPANY_NAME": "Impactory",
+    "APP_VERSION": "1.0.0",
+    "AXIOS_URL": "http://localhost:5000/api/v1",
+    "SUPPORT_EMAIL": "support@impactory.com",
+    "DEFAULT_PROJECT_DEADLINE_DAYS": 14,
+    "FEATURES": {
+        "ENABLE_NOTIFICATIONS": true,
+        "ENABLE_KANBAN": true
+    },
+    "USER_NAME": "Alex Johnson",
+    "USER_INITIALS": "AJ"
+}
