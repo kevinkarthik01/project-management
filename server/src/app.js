@@ -20,18 +20,12 @@ const allowedOrigins = [
 ].filter(Boolean);
 
 app.use(cors({
-    origin: (origin, callback) => {
-        if (
-            !origin ||
-            allowedOrigins.includes(origin) ||
-            origin.endsWith('.vercel.app')
-        ) {
-            return callback(null, true);
-        }
-        return callback(null, true);
-    },
-    credentials: true
+    origin: true,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
+app.options('/{*path}', cors());
 
 app.use(express.json({ limit: '25mb' }))
 
