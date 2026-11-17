@@ -1,14 +1,23 @@
 import axios from 'axios';
+import config_const from '../config/config.json';
 
-import config_const from '../config/config.json'
+const getApiBaseUrl = () => {
+    if (import.meta.env.VITE_API_URL) {
+        return import.meta.env.VITE_API_URL;
+    }
+    if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+        return config_const.AXIOS_URL || 'http://localhost:5000/api/v1';
+    }
+    return 'https://project-management-elso.vercel.app/api/v1';
+};
 
 const apiClient = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || config_const.AXIOS_URL || 'http://localhost:5000/api/v1',
+    baseURL: getApiBaseUrl(),
     headers: {
         'Content-Type': 'application/json'
     },
-    timeout: 15000
-})
+    timeout: 20000
+});
 // Response Interceptor: Catches global errors (Rate limits, Session Timeouts, Server Errors)
 apiClient.interceptors.response.use(
     (response) => {

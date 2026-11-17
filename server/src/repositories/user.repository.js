@@ -14,6 +14,10 @@ class UserRepository {
         return await User.findById(id);
     }
 
+    async findByIdWithPassword(id) {
+        return await User.findById(id).select('+password');
+    }
+
     async findAll(filter = {}) {
         return await User.find(filter).select('-password');
     }

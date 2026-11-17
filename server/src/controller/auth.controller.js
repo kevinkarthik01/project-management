@@ -13,13 +13,33 @@ class AuthController {
     });
 
     login = asyncHandler(async (req, res) => {
-        const { email, password } = req.body;
-        const result = await authService.login(email, password)
+        const { email, password, rememberMe } = req.body;
+        const result = await authService.login(email, password, rememberMe);
         res.status(200).json({
             success: true,
             message: 'User logged in successfully',
             data: result
-        })
+        });
+    });
+
+    resetPassword = asyncHandler(async (req, res) => {
+        const { email, newPassword, confirmPassword } = req.body;
+        const result = await authService.resetPassword({ email, newPassword, confirmPassword });
+        res.status(200).json({
+            success: true,
+            message: 'Password reset successfully. You can now log in with your new password.',
+            data: result
+        });
+    });
+
+    updatePassword = asyncHandler(async (req, res) => {
+        const { currentPassword, newPassword, confirmPassword } = req.body;
+        const result = await authService.updatePassword(req.user._id, currentPassword, newPassword, confirmPassword);
+        res.status(200).json({
+            success: true,
+            message: 'Password updated successfully.',
+            data: result
+        });
     });
 
     logout = asyncHandler(async (req, res) => {

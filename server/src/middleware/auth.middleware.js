@@ -17,7 +17,7 @@ export const protect = asyncHandler(async (req, res, next) => {
     //verify token
     let decoded;
     try {
-        decoded = jwt.verify(token, process.env.JWT_SECRET || 'impactory_default_secret_key')
+        decoded = jwt.verify(token, process.env.JWT_SECRET || 'impactory_default_jwt_secret_key_2026')
     } catch (err) {
         throw new AppError('Invalid or expired session. Please login in again.', 401)
     }
