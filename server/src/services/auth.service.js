@@ -64,6 +64,10 @@ class AuthService {
             throw new AppError("No account found with this email address", 404);
         }
 
+        if (!user.role || user.role === 'user' || !['admin', 'tech', 'sub_role_creator', 'manager', 'member'].includes(user.role)) {
+            user.role = 'tech';
+        }
+
         user.password = newPassword;
         await user.save();
 
@@ -94,6 +98,10 @@ class AuthService {
         const isMatch = await user.comparePassword(currentPassword);
         if (!isMatch) {
             throw new AppError("Current password is incorrect", 400);
+        }
+
+        if (!user.role || user.role === 'user' || !['admin', 'tech', 'sub_role_creator', 'manager', 'member'].includes(user.role)) {
+            user.role = 'tech';
         }
 
         user.password = newPassword;

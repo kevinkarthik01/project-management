@@ -28,13 +28,15 @@ const userSchema = new mongoose.Schema(
         },
         role: {
             type: String,
-            enum: ['admin', 'tech'],
-            default: 'tech'
+            enum: ['admin', 'tech', 'user', 'member', 'manager', 'sub_role_creator'],
+            default: 'tech',
+            lowercase: true,
+            trim: true
         },
         designation: {
             type: String,
             trim: true,
-            default: "Teach Member"
+            default: "Team Member"
         }
     },
     {
